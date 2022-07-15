@@ -1,0 +1,7254 @@
+registers:
+  input:
+    - address: 4950
+      name: "protocol_no"
+      type: "uint32"
+    - address: 4952
+      name: "protocol_ver"
+      type: "uint32"
+    - address: 4954
+      name: "arm_software_ver"
+      count: 15
+    - address: 4969
+      name: "dsp_software_ver"
+      count: 15
+    - address: 4990
+      name: "serial_number"
+      count: 10
+      type: "string"
+    - address: 5000
+      name: "device_type_code"
+      values:
+        0x27: "SG30KTL"
+        0x26: "SG10KTL"
+        0x29: "SG12KTL"
+        0x28: "SG15KTL"
+        0x2A: "SG20KTL"
+        0x2C: "SG30KU"
+        0x2D: "SG36KTL"
+        0x2E: "SG36KU"
+        0x2F: "SG40KTL"
+        0x135: "SG40KTL-M"
+        0x11B: "SG50KTL-M"
+        0x131: "SG60KTL-M"
+        0x136: "SG60KU"
+        0x141: "SG30KTL-M"
+        0x70: "SG30KTL-M-V31"
+        0x134: "SG33KTL-M"
+        0x74: "SG36KTL-M"
+        0x13D: "SG33K3J"
+        0x137: "SG49K5J"
+        0x72: "SG34KJ"
+        0x73: "LP_P34KSG"
+        0x10F: "SG60KTL"
+        0x138: "SG80KTL"
+        0x132: "SG60KU-M"
+        0x147: "SG5KTL-MT"
+        0x148: "SG6KTL-MT"
+        0x13F: "SG8KTL-M"
+        0x13E: "SG10KTL-M"
+        0x2C0F: "SG10KTL-MT"
+        0x13C: "SG12KTL-M"
+        0x142: "SG15KTL-M"
+        0x149: "SG17KTL-M"
+        0x143: "SG20KTL-M"
+        0x139: "SG80KTL-M"
+        0x14C: "SG111HV"
+        0x13B: "SG125HV"
+        0x2C03: "SG125HV-20"
+        0x2C10: "SG30CX"
+        0x2C00: "SG33CX"
+        0x2C0A: "SG36CX-US"
+        0x2C01: "SG40CX"
+        0x2C02: "SG50CX"
+        0x2C0B: "SG60CX-US"
+        0x2C06: "SG110CX"
+        0x2C0C: "SG250HX"
+        0x2C11: "SG250HX-US"
+        0x2C12: "SG100CX"
+        0x2C13: "SG250HX-IN"
+        0x2C15: "SG25CX-SA"
+        0x2C22: "SG75CX"
+        0x243D: "SG3.0RT"
+        0x243E: "SG4.0RT"
+        0x2430: "SG5.0RT"
+        0x2431: "SG6.0RT"
+        0x243C: "SG7.0RT"
+        0x2432: "SG8.0RT"
+        0x2433: "SG10RT"
+        0x2434: "SG12RT"
+        0x2435: "SG15RT"
+        0x2436: "SG17RT"
+        0x2437: "SG20RT"
+        0xD09:
+          hybrid: true
+          name: "SH5K-20"
+        0xD06:
+          hybrid: true
+          name: "SH3K6"
+        0xD07:
+          hybrid: true
+          name: "SH4K6"
+        0xD03:
+          hybrid: true
+          name: "SH5K-V13"
+        0xD0C:
+          hybrid: true
+          name: "SH5K-30"
+        0xD0A:
+          hybrid: true
+          name: "SH3K6-30"
+        0xD0B:
+          hybrid: true
+          name: "SH4K6-30"
+        0xD0F:
+          hybrid: true
+          name: "SH5.0RS"
+        0xD0D:
+          hybrid: true
+          name: "SH3.6RS"
+        0xD0E:
+          hybrid: true
+          name: "SH4.6RS"
+        0xD10:
+          hybrid: true
+          name: "SH6.0RS"
+        0xE03:
+          hybrid: true
+          name: "SH10RT"
+        0xE02:
+          hybrid: true
+          name: "SH8.0RT"
+        0xE01:
+          hybrid: true
+          name: "SH6.0RT"
+        0xE00:
+          hybrid: true
+          name: "SH5.0RT"
+    - address: 5001
+      name: "nominal_active_power"
+      unit: "kW"
+      scale: 0.1
+    - address: 5002
+      name: "output_type"
+      values:
+        0: "Single phase"
+        1: "3P4L"
+        2: "3P3L"
+    - address: 5003
+      name: "daily_power_yields"
+      unit: "kWh"
+      scale: 0.1
+    - address: 5004
+      name: "total_power_yields"
+      unit: "kWh"
+      type: "uint32"
+    - address: 5006
+      name: "total_running_time"
+      unit: "h"
+      type: "uint32"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 5008
+      name: "internal_temperature"
+      type: "int16"
+      scale: 0.1
+      unit: "°C"
+    - address: 5009
+      name: "total_aparent_power"
+      unit: "VA"
+      type: "uint32"
+      models:
+        [
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+          "SG33K3J",
+          "SG36KTL-M",
+          "SG40KTL-M",
+          "SG50KTL",
+          "SG50KTL-M",
+          "SG60KTL",
+          "SG60KTL-M",
+          "SG60KU-M",
+          "SG80KTL",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG33CX",
+          "SG40CX",
+          "SG50CX",
+          "SG110CX",
+          "SG250HX",
+          "SG30CX",
+          "SG36CX-US",
+          "SG60CX-US",
+          "SG250HX-US",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG100CX",
+          "SG75CX",
+          "SG225HX",
+        ]
+    - address: 5011
+      name: "mppt_1_voltage"
+      unit: "V"
+      scale: 0.1
+    - address: 5012
+      name: "mppt_1_current"
+      unit: "A"
+      scale: 0.1
+    - address: 5013
+      name: "mppt_2_voltage"
+      unit: "V"
+      scale: 0.1
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "SG50KTL-M-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+          "SH10RT", # This seems to be missing?
+        ]
+    - address: 5014
+      name: "mppt_2_current"
+      unit: "A"
+      scale: 0.1
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "SG50KTL-M-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+          "SH10RT", # this seems to be missing?
+        ]
+    - address: 5015
+      name: "mppt_3_voltage"
+      unit: "V"
+      scale: 0.1
+      models:
+        [
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG50KTL-M-20",
+          "SG60KU-M",
+          "SG80KTL-M",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+        ]
+    - address: 5016
+      name: "mppt_3_current"
+      unit: "A"
+      scale: 0.1
+      models:
+        [
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG50KTL-M-20",
+          "SG60KU-M",
+          "SG80KTL-M",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+        ]
+    - address: 5017
+      name: "total_dc_power"
+      unit: "W"
+      type: "uint32"
+    - address: 5019
+      name: "voltage_a_phase"
+      unit: "V"
+      scale: 0.1
+    - address: 5020
+      name: "voltage_b_phase"
+      unit: "V"
+      scale: 0.1
+    - address: 5021
+      name: "voltage_c_phase"
+      unit: "V"
+      scale: 0.1
+    - address: 5022
+      name: "current_a_phase"
+      unit: "A"
+      scale: 0.1
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 5023
+      name: "current_b_phase"
+      unit: "A"
+      scale: 0.1
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 5024
+      name: "current_c_phase"
+      unit: "A"
+      scale: 0.1
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 5031
+      name: "total_active_power"
+      unit: "W"
+      type: "uint32"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 5033
+      name: "total_reactive_power"
+      unit: "Var"
+      type: "int32"
+    - address: 5035
+      name: "power_factor"
+      type: "int16"
+      scale: 0.001
+    - address: 5036
+      name: "grid_frequency"
+      type: "uint16"
+      unit: "Hz"
+      scale: 0.1
+    - address: 5038
+      name: "work_state"
+      values:
+        0x0: "Run"
+        0x8000: "Stop"
+        0x1300: "Key Stop"
+        0x1500: "Emergancy Stop"
+        0x1400: "Standby"
+        0x1200: "Initial Stanby"
+        0x1600: "Starting"
+        0x9100: "Alarm Run"
+        0x8100: "Derating Run"
+        0x8200: "Dispatch Run"
+        0x5500: "Fault"
+        0x2500: "Communication Fault"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 5039
+      name: "fault_year"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 5040
+      name: "fault_month"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 5041
+      name: "fault_day"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 5042
+      name: "fault_hour"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 5043
+      name: "fault_minute"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 5044
+      name: "fault_second"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 5045
+      name: "fault_code"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 5049
+      name: "nominal_reactive_power"
+      scale: 0.1
+      unit: "kVar"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 5071
+      name: "array_insulation_resistance"
+      unit: "kΩ"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 5077
+      name: "active_power_regulation_setpoint"
+      type: "uint32"
+      unit: "w"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 5079
+      name: "reactive_power_regualtion_setpoint"
+      type: "int32"
+      unit: "Var"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 5081
+      name: "work_state"
+      type: "uint32"
+      values:
+        0x0: "Run"
+        0x1: "Stop"
+        0x3: "Key Stop"
+        0x5: "Emergancy Stop"
+        0x4: "Standby"
+        0x2: "Initial Stanby"
+        0x6: "Starting"
+        0xA: "Alarm Run"
+        0xB: "Derating Run"
+        0xC: "Dispatch Run"
+        0x9: "Fault"
+        0xD: "Communication Fault"
+        0x11: "Total Run Bit"
+        0x12: "Total Fault Bit"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 5083
+      name: "meter_power"
+      type: "int32"
+      unit: "W"
+      models:
+        [
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+        ]
+    - address: 5085
+      name: "meter_a_phase_power"
+      type: "int32"
+      unit: "W"
+      models:
+        [
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+        ]
+    - address: 5087
+      name: "meter_b_phase_power"
+      type: "int32"
+      unit: "W"
+      models:
+        [
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+        ]
+    - address: 5089
+      name: "meter_c_phase_power"
+      type: "int32"
+      unit: "W"
+      models:
+        [
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+        ]
+    - address: 5091
+      name: "load_power"
+      type: "int32"
+      unit: "W"
+      models:
+        [
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+        ]
+    - address: 5093
+      name: "daily_export_energy"
+      type: "uint32"
+      unit: "kWh"
+      scale: 0.1
+      models:
+        [
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+        ]
+    - address: 5095
+      name: "total_export_energy"
+      type: "uint32"
+      unit: "kWh"
+      scale: 0.1
+      models:
+        [
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+        ]
+    - address: 5097
+      name: "daily_import_energy"
+      type: "uint32"
+      unit: "kWh"
+      scale: 0.1
+      models:
+        [
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+        ]
+    - address: 5099
+      name: "total_import_energy"
+      type: "uint32"
+      unit: "kWh"
+      scale: 0.1
+      models:
+        [
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+        ]
+    - address: 5101
+      name: "daily_direct_energy_consumption"
+      type: "uint32"
+      unit: "kWh"
+      scale: 0.1
+      models:
+        [
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+        ]
+    - address: 5103
+      name: "total_direct_energy_consumption"
+      type: "uint32"
+      unit: "kWh"
+      scale: 0.1
+      models:
+        [
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+        ]
+    - address: 5113
+      name: "daily_running_time"
+      unit: "min"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 5114
+      name: "present_country"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 5115
+      name: "mppt_4_voltage"
+      unit: "V"
+      scale: 0.1
+      models:
+        [
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG49K5J",
+          "SG50KTL-M-20",
+          "SG60KU-M",
+          "SG80KTL-M",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG75CX",
+        ]
+    - address: 5116
+      name: "mppt_4_current"
+      unit: "A"
+      scale: 0.1
+      models:
+        [
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG49K5J",
+          "SG50KTL-M-20",
+          "SG60KU-M",
+          "SG80KTL-M",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG75CX",
+        ]
+    - address: 5117
+      name: "mppt_5_voltage"
+      unit: "V"
+      scale: 0.1
+      models:
+        [
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG75CX",
+        ]
+    - address: 5118
+      name: "mppt_5_current"
+      unit: "A"
+      scale: 0.1
+      models:
+        [
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG75CX",
+        ]
+    - address: 5119
+      name: "mppt_6_voltage"
+      unit: "V"
+      scale: 0.1
+      models:
+        [
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG75CX",
+        ]
+    - address: 5120
+      name: "mppt_6_current"
+      unit: "A"
+      scale: 0.1
+      models:
+        [
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG75CX",
+        ]
+    - address: 5121
+      name: "mppt_7_voltage"
+      unit: "V"
+      scale: 0.1
+      models:
+        [
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG75CX",
+        ]
+    - address: 5122
+      name: "mppt_7_current"
+      unit: "A"
+      scale: 0.1
+      models:
+        [
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG75CX",
+        ]
+    - address: 5123
+      name: "mppt_8_voltage"
+      unit: "V"
+      scale: 0.1
+      models:
+        [
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG75CX",
+        ]
+    - address: 5124
+      name: "mppt_8_current"
+      unit: "A"
+      scale: 0.1
+      models:
+        [
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG75CX",
+        ]
+    - address: 5128
+      name: "monthly_power_yields"
+      unit: "kWh"
+      type: "uint32"
+      scale: 0.1
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 5130
+      name: "mppt_9_voltage"
+      unit: "V"
+      scale: 0.1
+      models:
+        [
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG75CX",
+        ]
+    - address: 5131
+      name: "mppt_9_current"
+      unit: "A"
+      scale: 0.1
+      models:
+        [
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG75CX",
+        ]
+    - address: 5132
+      name: "mppt_10_voltage"
+      unit: "V"
+      scale: 0.1
+      models: ["SG250HX", "SG250HX-US", "SG100CX", "SG100CX-JP", "SG250HX-IN"]
+    - address: 5133
+      name: "mppt_10_current"
+      unit: "A"
+      scale: 0.1
+      models: ["SG250HX", "SG250HX-US", "SG100CX", "SG100CX-JP", "SG250HX-IN"]
+    - address: 5134
+      name: "mppt_11_voltage"
+      unit: "V"
+      scale: 0.1
+      models: ["SG250HX", "SG250HX-US", "SG100CX", "SG100CX-JP", "SG250HX-IN"]
+    - address: 5135
+      name: "mppt_11_current"
+      unit: "A"
+      scale: 0.1
+      models: ["SG250HX", "SG250HX-US", "SG100CX", "SG100CX-JP", "SG250HX-IN"]
+    - address: 5136
+      name: "mppt_12_voltage"
+      unit: "V"
+      scale: 0.1
+      models: ["SG250HX", "SG250HX-US", "SG100CX", "SG100CX-JP", "SG250HX-IN"]
+    - address: 5137
+      name: "mppt_12_current"
+      unit: "A"
+      scale: 0.1
+      models: ["SG250HX", "SG250HX-US", "SG100CX", "SG100CX-JP", "SG250HX-IN"]
+    - address: 5144
+      name: "total_power_yields"
+      unit: "kWh"
+      scale: 0.1
+      type: "uint32"
+      models:
+        [
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG33CX",
+          "SG40CX",
+          "SG50CX",
+          "SG110CX",
+          "SG250HX",
+          "SG30CX",
+          "SG36CX-US",
+          "SG60CX-US",
+          "SG250HX-US",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG100CX",
+          "SG75CX",
+          "SG225HX",
+        ]
+    - address: 5146
+      name: "netagive_voltage_to_ground"
+      scale: 0.1
+      unit: "V"
+      type: "int16"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 5147
+      name: "bus_voltage"
+      scale: 0.01
+      unit: "V"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 5148
+      name: "grid_frequency"
+#      scale: 0.1 - not in my inverter
+      scale: 0.01 
+      unit: "Hz"
+      models:
+        [
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG33CX",
+          "SG40CX",
+          "SG50CX",
+          "SG110CX",
+          "SG250HX",
+          "SG30CX",
+          "SG36CX-US",
+          "SG60CX-US",
+          "SG250HX-US",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG100CX",
+          "SG75CX",
+          "SG225HX",
+        ]
+    - address: 5150
+      name: "pid_work_state"
+      values:
+        2: "PID Recover Operation"
+        4: "Anti-PID Operation"
+        8: "PID Abnormity"
+      models:
+        [
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG33CX",
+          "SG40CX",
+          "SG50CX",
+          "SG110CX",
+          "SG250HX",
+          "SG30CX",
+          "SG36CX-US",
+          "SG60CX-US",
+          "SG250HX-US",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG100CX",
+          "SG75CX",
+          "SG225HX",
+        ]
+    - address: 5151
+      name: "pid_alarm_code"
+      values:
+        432: "PID resistance abnormal"
+        433: "PID function abnormal"
+        545: "PID overvoltage/overcurrent protection"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 5216
+      name: "export_power"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 5218
+      name: "power_meter"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 5622
+      name: "export_limit_min"
+      scale: 10.0
+      unit: "W"
+      models:
+        [
+          "SH3.6RS",
+          "SH5.0RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 5623
+      name: "export_limit_max"
+      scale: 10.0
+      unit: "W"
+      models:
+        [
+          "SH3.6RS",
+          "SH5.0RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 5628
+      name: "bdc_rated_power"
+      scale: 100.0
+      unit: "W"
+      models:
+        [
+          "SH3.6RS",
+          "SH5.0RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 5635
+      name: "max_charging_current_bms"
+      unit: "A"
+      models:
+        [
+          "SH3.6RS",
+          "SH5.0RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 5636
+      name: "max_discharging_current_bms"
+      unit: "A"
+      models:
+        [
+          "SH3.6RS",
+          "SH5.0RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 6100
+      name: "pv_power_of_today"
+      unit: "W"
+      count: 96
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 6196
+      name: "daily_pv_energy_yields"
+      unit: "kWh"
+      scale: 0.1
+      count: 31
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 6227
+      name: "monthly_pv_energy_yields"
+      unit: "kWh"
+      count: 12
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 6250
+      name: "yearly_pv_energy_yields"
+      type: "uint32"
+      unit: "kWh"
+      scale: 0.1
+      count: 20
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 6290
+      name: "direct_power_consumption_today_pv"
+      unit: "W"
+      count: 96
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 6386
+      name: "direct_power_consumption_pv"
+      unit: "kWh"
+      scale: 0.1
+      count: 31
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 6417
+      name: "direct_power_consumption_monthly_pv"
+      unit: "kWh"
+      scale: 0.1
+      count: 12
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 6429
+      name: "direct_power_consumption_yearly_pv"
+      unit: "kWh"
+      scale: 0.1
+      count: 20
+    - address: 6469
+      name: "export_power_from_pv_today"
+      unit: "W"
+      count: 96
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 6565
+      name: "export_power_from_pv"
+      unit: "kWh"
+      count: 31
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 6596
+      name: "export_power_from_pv_monthly"
+      unit: "kWh"
+      count: 12
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 6608
+      name: "export_power_from_pv_yearly"
+      unit: "kWh"
+      count: 20
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 6648
+      name: "battery_charge_power_from_pv_today"
+      unit: "W"
+      count: 96
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 6744
+      name: "battery_charge_power_from_pv"
+      unit: "kWh"
+      count: 31
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 6775
+      name: "battery_charge_power_from_pv_monthly"
+      unit: "kWh"
+      count: 12
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 6787
+      name: "battery_charge_power_from_pv_yearly"
+      unit: "kWh"
+      count: 20
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 7013
+      name: "string_1_current"
+      scale: 0.01
+      unit: "A"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 7014
+      name: "string_2_current"
+      scale: 0.01
+      unit: "A"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 7015
+      name: "string_3_current"
+      scale: 0.01
+      unit: "A"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 7016
+      name: "string_4_current"
+      scale: 0.01
+      unit: "A"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 7017
+      name: "string_5_current"
+      scale: 0.01
+      unit: "A"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 7018
+      name: "string_6_current"
+      scale: 0.01
+      unit: "A"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 7019
+      name: "string_7_current"
+      scale: 0.01
+      unit: "A"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 7020
+      name: "string_8_current"
+      scale: 0.01
+      unit: "A"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 7021
+      name: "string_9_current"
+      scale: 0.01
+      unit: "A"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 7022
+      name: "string_10_current"
+      scale: 0.01
+      unit: "A"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 7023
+      name: "string_11_current"
+      scale: 0.01
+      unit: "A"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 7024
+      name: "string_12_current"
+      scale: 0.01
+      unit: "A"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 7025
+      name: "string_13_current"
+      scale: 0.01
+      unit: "A"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 7026
+      name: "string_14_current"
+      scale: 0.01
+      unit: "A"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 7027
+      name: "string_15_current"
+      scale: 0.01
+      unit: "A"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 7028
+      name: "string_16_current"
+      scale: 0.01
+      unit: "A"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 7029
+      name: "string_17_current"
+      scale: 0.01
+      unit: "A"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 7030
+      name: "string_18_current"
+      scale: 0.01
+      unit: "A"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 7031
+      name: "string_19_current"
+      scale: 0.01
+      unit: "A"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 7032
+      name: "string_20_current"
+      scale: 0.01
+      unit: "A"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 7033
+      name: "string_21_current"
+      scale: 0.01
+      unit: "A"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 7034
+      name: "string_22_current"
+      scale: 0.01
+      unit: "A"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 7035
+      name: "string_23_current"
+      scale: 0.01
+      unit: "A"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 7036
+      name: "string_24_current"
+      scale: 0.01
+      unit: "A"
+      models:
+        [
+          "SG30KTL",
+          "SG10KTL",
+          "SG12KTL",
+          "SG15KTL",
+          "SG20KTL",
+          "SG30KU",
+          "SG36KTL",
+          "SG36KU",
+          "SG40KTL",
+          "SG40KTL-M",
+          "SG50KTL-M",
+          "SG60KTL-M",
+          "SG60KU",
+          "SG30KTL-M",
+          "SG30KTL-M-V31",
+          "SG33KTL-M",
+          "SG36KTL-M",
+          "SG33K3J",
+          "SG49K5J",
+          "SG34KJ",
+          "LP_P34KSG",
+          "SG50KTL-M-20",
+          "SG60KTL",
+          "SG80KTL",
+          "SG80KTL-20",
+          "SG60KU-M",
+          "SG5KTL-MT",
+          "SG6KTL-MT",
+          "SG8KTL-M",
+          "SG10KTL-M",
+          "SG10KTL-MT",
+          "SG12KTL-M",
+          "SG15KTL-M",
+          "SG17KTL-M",
+          "SG20KTL-M",
+          "SG80KTL-M",
+          "SG111HV",
+          "SG125HV",
+          "SG125HV-20",
+          "SG30CX",
+          "SG33CX",
+          "SG36CX-US",
+          "SG40CX",
+          "SG50CX",
+          "SG60CX-US",
+          "SG110CX",
+          "SG250HX",
+          "SG250HX-US",
+          "SG100CX",
+          "SG100CX-JP",
+          "SG250HX-IN",
+          "SG25CX-SA",
+          "SG75CX",
+          "SG3.0RT",
+          "SG4.0RT",
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT",
+        ]
+    - address: 13000
+      name: "system_state"
+      values:
+        0x0002: "Stop"
+        0x0008: "Standby"
+        0x0010: "Initial standby"
+        0x0020: "Startup"
+        0x0040: "Running"
+        0x0100: "Fault"
+        0x0400: "Running in maintain mode"
+        0x0800: "Running in forced mode"
+        0x1000: "Running in off-grid mode"
+        0x2501: "Restarting"
+        0x4000: "Running in External EMS mode"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13001
+      name: "running_state"
+      bits:
+        0x01: "Power generated from PV"
+        0x02: "Charging"
+        0x04: "Discharging"
+        0x08: "Load is active"
+        0x10: "Power feed-in the grid"
+        0x20: "Importing power from grid"
+        0x40: "~reserved~"
+        0x80: "Power genrated from 'Load'"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13002
+      name: "daily_pv_generation"
+      unit: "kWh"
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13003
+      name: "total_pv_generation"
+      unit: "kWh"
+      scale: 0.1
+      type: "uint32"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13005
+      name: "daily_export_from_pv"
+      unit: "kWh"
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13006
+      name: "total_export_from_pv"
+      unit: "kWh"
+      scale: 0.1
+      type: "uint32"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13008
+      name: "load_power"
+      unit: "W"
+      type: "int32"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13010
+      name: "export_power"
+      unit: "W"
+      type: "int32"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13012
+      name: "daily_battery_charge_from_pv"
+      unit: "kWh"
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13013
+      name: "total_battery_charge_from_pv"
+      unit: "kWh"
+      type: "uint32"
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13015
+      name: "co2_reduction"
+      unit: "kg"
+      type: "uint32"
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13017
+      name: "daily_direct_energy_consumption"
+      unit: "kWh"
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13018
+      name: "total_direct_energy_consumption"
+      unit: "kWh"
+      type: "uint32"
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13020
+      name: "battery_voltage"
+      unit: "V"
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13021
+      name: "battery_current"
+      unit: "A"
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13022
+      name: "battery_power"
+      unit: "W"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13023
+      name: "battery_level"
+      unit: "%"
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13024
+      name: "battery_health"
+      unit: "%"
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13025
+      name: "battery_temperature"
+      unit: "°C"
+      type: "int16"
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13026
+      name: "daily_battery_discharge_energy"
+      unit: "kWh"
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13027
+      name: "total_battery_discharge_energy"
+      unit: "kWh"
+      type: "uint32"
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13029
+      name: "self_consumption_today"
+      unit: "%"
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13030
+      name: "grid_state"
+      values:
+        0xAA: "Off grid"
+        0x55: "On grid"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13031
+      name: "phase_a_current"
+      unit: "A"
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13032
+      name: "phase_b_current"
+      unit: "A"
+      scale: 0.1
+      valid: "{read.output_type} > 0"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13033
+      name: "phase_c_current"
+      unit: "A"
+      scale: 0.1
+      valid: "{read.output_type} > 0"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13034
+      name: "total_active_power"
+      unit: "W"
+      type: "int32"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13036
+      name: "daily_import_energy"
+      unit: "kWh"
+      scale: 0.1
+    - address: 13039
+      name: "battery_capacity"
+      unit: "kWh/Ah"
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13037
+      name: "total_import_energy"
+      type: "uint32"
+      unit: "kWh"
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13039
+      name: "battery_capacity"
+      unit: "kWh/Ah"
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13040
+      name: "daily_charge_energy"
+      unit: "kWh"
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13041
+      name: "total_charge_energy"
+      unit: "kWh"
+      type: "uint32"
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13043
+      name: "drm_state"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13045
+      name: "daily_export_energy"
+      unit: "kWh"
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13046
+      name: "total_export_energy"
+      unit: "kWh"
+      type: "uint32"
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13050
+      name: "inverter_alarm"
+      type: "uint32"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13052
+      name: "grid_side_fault"
+      type: "uint32"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13054
+      name: "system_fault_1"
+      type: "uint32"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13056
+      name: "system_fault_2"
+      type: "uint32"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13058
+      name: "dc_side_fault"
+      type: "uint32"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13060
+      name: "permanent_fault"
+      type: "uint32"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13062
+      name: "bdc_side_fault"
+      type: "uint32"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13064
+      name: "bdc_side_permanent_fault"
+      type: "uint32"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13066
+      name: "battery_fault"
+      type: "uint32"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13068
+      name: "battery_alarm"
+      type: "uint32"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13070
+      name: "bms_alarm"
+      type: "uint32"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13072
+      name: "bms_protection"
+      type: "uint32"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13074
+      name: "bms_fault_1"
+      type: "uint32"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13076
+      name: "bms_fault_2"
+      type: "uint32"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13078
+      name: "bms_alarm_2"
+      type: "uint32"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13100
+      name: "bms_status"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13101
+      name: "max_charging_current"
+      unit: "A"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13102
+      name: "max_discharging_current"
+      unit: "A"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13103
+      name: "warning"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13104
+      name: "protection"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13105
+      name: "fault_1"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13106
+      name: "fault_2"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13107
+      name: "soc"
+      unit: "%"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13108
+      name: "soh"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13109
+      name: "battery_current"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13110
+      name: "battery_voltage"
+      unit: "V"
+      scale: 0.01
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13111
+      name: "cycle_count"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13112
+      name: "average_cell_voltage"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13113
+      name: "max_cell_voltage"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13114
+      name: "min_cell_voltage"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13115
+      name: "battery_pack_voltage"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13116
+      name: "average_cell_temperature"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13117
+      name: "max_cell_temperature"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13118
+      name: "min_cell_temperature"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+
+  holding:
+    - address: 5000
+      name: "system_clock_year"
+    - address: 5001
+      name: "system_clock_month"
+    - address: 5002
+      name: "system_clock_day"
+    - address: 5003
+      name: "system_clock_hour"
+    - address: 5004
+      name: "system_clock_minute"
+    - address: 5005
+      name: "system_clock_second"
+    - address: 5006
+      name: "start_stop"
+      values:
+        0xCF: "start"
+        0xCE: "stop"
+    - address: 5007
+      name: "power_limitation_switch"
+      values:
+        0xAA: "enable"
+        0x55: "disable"
+    - address: 5008
+      name: "power_limitation_setting"
+      scale: 0.1
+      unit: "%"
+      availibility: "{holding.power_limitation_switch} == 0xAA"
+    - address: 5010
+      name: "export_power_limitation"
+      values:
+        0xAA: "enable"
+        0x55: "disable"
+    - address: 5011
+      name: "export_power_limitation_value"
+    - address: 5012
+      name: "current_transformer_output_current"
+      unit: "A"
+    - address: 5013
+      name: "current_transformer_range"
+      unit: "A"
+    - address: 5014
+      name: "current_transformer"
+      values:
+        0: "internal"
+        1: "external"
+    - address: 5015
+      name: "export_power_limitation_percentage"
+      scale: 0.1
+      unit: "%"
+    - address: 5016
+      name: "installed_pv_power"
+      scale: 0.01
+      unit: "kW"
+    - address: 13000
+      name: "start_stop"
+      values:
+        0xCF: "start"
+        0xCE: "stop"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13001
+      name: "battery_maintenance"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13002
+      name: "load_1_adjustment_mode"
+      values:
+        0: "Timing mode"
+        1: "ON/OFF mode"
+        2: "Power optimized mode"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13003
+      name: "load_1_timing_period_1_start_hour"
+      min: 0
+      max: 23
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13004
+      name: "load_1_timing_period_1_start_minute"
+      min: 0
+      max: 59
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13005
+      name: "load_1_timing_period_1_end_hour"
+      min: 0
+      max: 23
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13006
+      name: "load_1_timing_period_1_end_minute"
+      min: 0
+      max: 59
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13007
+      name: "load_1_timing_period_2_start_hour"
+      min: 0
+      max: 23
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13008
+      name: "load_1_timing_period_2_start_minute"
+      min: 0
+      max: 59
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13009
+      name: "load_1_timing_period_2_end_hour"
+      min: 0
+      max: 23
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13010
+      name: "load_1_timing_period_2_end_minute"
+      min: 0
+      max: 59
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13011
+      name: "load_1_on_off_mode"
+      values:
+        0xAA: "On"
+        0x55: "Off"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13012
+      name: "load_1_optimized_mode_start_hour"
+      min: 0
+      max: 23
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13013
+      name: "load_1_optimized_mode_start_minute"
+      min: 0
+      max: 59
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13014
+      name: "load_1_optimized_mode_end_hour"
+      min: 0
+      max: 23
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13015
+      name: "load_1_optimized_mode_end_minute"
+      min: 0
+      max: 59
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13016
+      name: "load_1_optimized_power"
+      min: 0
+      max: 5000
+      unit: "W"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13050
+      name: "ems_mode_selection"
+      values:
+        0: "Self-consumption mode"
+        2: "Forced mode"
+        3: "External EMS"
+      default: 0
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13051
+      name: "charge_discharge_command"
+      values:
+        0xAA: "Charge"
+        0xBB: "Discharge"
+        0xCC: "Stop"
+      default: 0xCC
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13052
+      name: "charge_discharge_power"
+      min: 0
+      max: 5000
+      default: 1000
+      unit: "W"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13055
+      name: "battery_type"
+      values:
+        0: "Lead-acid Narada"
+        1: "Li-ion Samsung"
+        2: "No battery"
+        3: "Other Lead-acid"
+        4: "Li-ion US2000A"
+        5: "Li-ion LG"
+        6: "Li-ion US2000B"
+        7: "Li-ion GCL"
+        8: "Li-ion BlueSun"
+        9: "Li-ion Sungrow"
+        10: "Li-ion BYD"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13056
+      name: "battery_nominal_voltage"
+      min: 30.0
+      max: 60.0
+      scale: 0.1
+      unit: "V"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13057
+      name: "battery_capacity"
+      min: 10
+      max: 1000
+      unit: "Ah"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13058
+      name: "max_soc"
+      min: 70.0
+      max: 100.0
+      unit: "%"
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13059
+      name: "min_soc"
+      min: 0.0
+      max: 50.0
+      unit: "%"
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13060
+      name: "battery_overvoltage_threshold"
+      min: 48.0
+      max: 70.0
+      unit: "V"
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13061
+      name: "battery_undervoltage_threshold"
+      min: 32.0
+      max: 48.0
+      unit: "V"
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13062
+      name: "battery_over_temperature_threshold"
+      type: "int16"
+      min: 20.0
+      max: 60.0
+      unit: "°C"
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13062
+      name: "battery_under_temperature_threshold"
+      type: "int16"
+      min: -30.0
+      max: 10.0
+      unit: "°C"
+      scale: 0.1
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13065
+      name: "terminated_current_of_constant_voltage_charging"
+      min: 0.005
+      max: 0.050
+      unit: "C"
+      scale: 0.001
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13066
+      name: "max_discarge_current"
+      min: 0.100
+      max: 2.000
+      unit: "C"
+      scale: 0.001
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13067
+      name: "max_charge_current"
+      min: 0.050
+      max: 2.000
+      unit: "C"
+      scale: 0.001
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13068
+      name: "constant_charge_voltage"
+      min: 40.0
+      max: 60.0
+      unit: "V"
+      scale: 0.01
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13069
+      name: "terminated_voltage_of_discharging"
+      min: 30.0
+      max: 50.0
+      unit: "V"
+      scale: 0.001
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13070
+      name: "emergency_charge_current"
+      min: 0.025
+      max: 2.00
+      unit: "C"
+      scale: 0.001
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13071
+      name: "time_for_fully_charge"
+      min: 3
+      max: 10800
+      unit: "s"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13072
+      name: "terminated_current_for_full_charge"
+      min: 0.005
+      max: 0.050
+      unit: "C"
+      scale: 0.001
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13073
+      name: "time_for_constant_voltage_charge"
+      min: 3
+      max: 10000
+      unit: "s"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13074
+      name: "export_power_limitation"
+      unit: "W"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13075
+      name: "off_grid_option"
+      values:
+        0xAA: "Enable"
+        0x55: "Disable"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13080
+      name: "external_ems_heartbeat"
+      min: 0
+      max: 20
+      unit: "s"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13083
+      name: "external_signal_of_italy"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13084
+      name: "start_charging_power"
+      min: 70
+      max: 10000
+      unit: "W"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13085
+      name: "start_discharging_power"
+      min: 70
+      max: 3000
+      unit: "W"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+        ]
+    - address: 13086
+      name: "meter_comm_detection"
+      values:
+        0xAA: "Enable"
+        0x55: "Disable"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]
+    - address: 13087
+      name: "export_power_limitation"
+      values:
+        0xAA: "Enable"
+        0x55: "Disable"
+      models: ["SH10RT", "SH8.0RT", "SH6.0RT", "SH5.0RT"]
+    - address: 13100
+      name: "reserve_soc_for_backup"
+      min: 0
+      max: 100
+      unit: "%"
+      models:
+        [
+          "SH5K-20",
+          "SH3K6",
+          "SH4K6",
+          "SH5K-V13",
+          "SH5K-30",
+          "SH3K6-30",
+          "SH4K6-30",
+          "SH5.0RS",
+          "SH3.6RS",
+          "SH4.6RS",
+          "SH6.0RS",
+          "SH10RT",
+          "SH8.0RT",
+          "SH6.0RT",
+          "SH5.0RT",
+        ]

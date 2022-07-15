@@ -16,6 +16,7 @@ import (
 	"sync"
 	"time"
 
+	"github.com/avast/retry-go"
 	"github.com/goburrow/modbus"
 	"github.com/gorilla/websocket"
 )
@@ -133,78 +134,85 @@ func (mb *httpTransporter) Send(aduRequest []byte) (aduResponse []byte, err erro
 	mb.mu.Lock()
 	defer mb.mu.Unlock()
 
-	// Establish a new connection if not connected
-	if err = mb.connect(); err != nil {
-		return
-	}
+	err = retry.Do(func() error {
+		// Establish a new connection if not connected
+		if err = mb.connect(); err != nil {
+			return err
+		}
 
-	// Extract the unnessicarily packed data
-	paramType := aduRequest[0]
-	slaveID := aduRequest[1]
-	address := binary.BigEndian.Uint16(aduRequest[2:4])
-	quantity := binary.BigEndian.Uint16(aduRequest[4:6])
+		// Extract the unnessicarily packed data
+		paramType := aduRequest[0]
+		slaveID := aduRequest[1]
+		address := binary.BigEndian.Uint16(aduRequest[2:4])
+		quantity := binary.BigEndian.Uint16(aduRequest[4:6])
 
-	vars := url.Values{
-		"token":      {mb.token},
-		"lang":       {"en_us"},
-		"time123456": {strconv.FormatInt(time.Now().UTC().UnixNano()/1e6, 10)},
-		"dev_id":     {strconv.Itoa(int(slaveID))},
-		"dev_type":   {strconv.Itoa(mb.devType)},
-		"dev_code":   {strconv.Itoa(mb.devCode)},
-		"type":       {"3"},
-		"param_addr": {strconv.Itoa(int(address + 1))},
-		"param_num":  {strconv.Itoa(int(quantity))},
-		"param_type": {strconv.Itoa(int(paramType))},
-	}
+		vars := url.Values{
+			"token":      {mb.token},
+			"lang":       {"en_us"},
+			"time123456": {strconv.FormatInt(time.Now().UTC().UnixNano()/1e6, 10)},
+			"dev_id":     {strconv.Itoa(int(slaveID))},
+			"dev_type":   {strconv.Itoa(mb.devType)},
+			"dev_code":   {strconv.Itoa(mb.devCode)},
+			"type":       {"3"},
+			"param_addr": {strconv.Itoa(int(address + 1))},
+			"param_num":  {strconv.Itoa(int(quantity))},
+			"param_type": {strconv.Itoa(int(paramType))},
+		}
 
-	uri := mb.getParamURL
-	uri.RawQuery = vars.Encode()
+		uri := mb.getParamURL
+		uri.RawQuery = vars.Encode()
 
-	mb.logf("modbus: sent %q\n", uri.RawQuery)
+		mb.logf("modbus: sent %q\n", uri.RawQuery)
 
-	// Send data
-	c := &http.Client{
-		Timeout: mb.Timeout,
-	}
-	resp, err := c.Get(uri.String())
+		// Send data
+		c := &http.Client{
+			Timeout: mb.Timeout,
+		}
+		resp, err := c.Get(uri.String())
+
+		if err != nil {
+			return err
+		}
+
+		defer resp.Body.Close()
+
+		var message jsonMessage
+		var simpleMessage jsonSimpleMessage
+		message.ResultData = &simpleMessage
+
+		if err := json.NewDecoder(io.LimitReader(resp.Body, jsonMaxLength)).Decode(&message); err != nil {
+			return fmt.Errorf("failed to decode json response: %w", err)
+		}
+
+		mb.logf("modbus: received %v\n", message)
+
+		if message.ResultCode != 1 {
+			return fmt.Errorf("failed to read %d: %s  (%d)", address+1, message.ResultMsg, message.ResultCode)
+		}
+
+		aduResponse, err = hex.DecodeString(
+			strings.Join(
+				strings.Split(
+					strings.TrimSpace(simpleMessage.ParamValue),
+					" ",
+				),
+				""),
+		)
+
+		if err != nil {
+			return fmt.Errorf("failed to parse hex string in response %q: %w", simpleMessage.ParamValue, err)
+		}
+
+		aduResponse = append([]byte{paramType, byte(len(aduResponse))}, aduResponse...)
+
+		mb.logf("modbus: transcoded % 0x\n", aduResponse)
+		return nil
+
+	}, retry.Attempts(3), retry.DelayType(retry.BackOffDelay))
 
 	if err != nil {
 		return nil, err
 	}
-
-	defer resp.Body.Close()
-
-	var message jsonMessage
-	var simpleMessage jsonSimpleMessage
-	message.ResultData = &simpleMessage
-
-	if err := json.NewDecoder(io.LimitReader(resp.Body, jsonMaxLength)).Decode(&message); err != nil {
-		return nil, fmt.Errorf("failed to decode json response: %w", err)
-	}
-
-	mb.logf("modbus: received %v\n", message)
-
-	if message.ResultCode != 1 {
-		return nil, fmt.Errorf("%s  (%d)", message.ResultMsg, message.ResultCode)
-	}
-
-	aduResponse, err = hex.DecodeString(
-		strings.Join(
-			strings.Split(
-				strings.TrimSpace(simpleMessage.ParamValue),
-				" ",
-			),
-			""),
-	)
-
-	if err != nil {
-		return nil, fmt.Errorf("failed to parse hex string in response %q: %w", simpleMessage.ParamValue, err)
-	}
-
-	aduResponse = append([]byte{paramType, byte(len(aduResponse))}, aduResponse...)
-
-	mb.logf("modbus: transcoded % 0x\n", aduResponse)
-
 	return aduResponse, nil
 }
 
@@ -237,7 +245,7 @@ func (mb *httpTransporter) connect() error {
 	if mb.token == "" {
 		c, _, err := websocket.DefaultDialer.Dial(mb.websocketURL.String(), nil)
 		if err != nil {
-			log.Fatal("dial:", err)
+			return fmt.Errorf("failure to dial websocket: %w", err)
 		}
 
 		if err != nil {

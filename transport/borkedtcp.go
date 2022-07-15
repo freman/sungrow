@@ -48,7 +48,7 @@ type borkedTCPPackager struct {
 	// For synchronization between messages of server & client
 	transactionId uint32
 	// Broadcast address is 0
-	SlaveId byte
+	SlaveID byte
 }
 
 // Encode adds modbus application protocol header:
@@ -66,11 +66,11 @@ func (mb *borkedTCPPackager) Encode(pdu *modbus.ProtocolDataUnit) (adu []byte, e
 	binary.BigEndian.PutUint16(adu, uint16(transactionId))
 	// Protocol identifier
 	binary.BigEndian.PutUint16(adu[2:], tcpProtocolIdentifier)
-	// Length = sizeof(SlaveId) + sizeof(FunctionCode) + Data
+	// Length = sizeof(SlaveID) + sizeof(FunctionCode) + Data
 	length := uint16(1 + 1 + len(pdu.Data))
 	binary.BigEndian.PutUint16(adu[4:], length)
 	// Unit identifier
-	adu[6] = mb.SlaveId
+	adu[6] = mb.SlaveID
 
 	// PDU
 	adu[tcpHeaderSize] = pdu.FunctionCode
