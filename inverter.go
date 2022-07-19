@@ -40,6 +40,10 @@ func (i *Inverter) Clear() {
 }
 
 func (i *Inverter) Read(client Modbus) error {
+	return i.ReadWithSkip(client, func(r Register, funcCode int) bool { return false })
+}
+
+func (i *Inverter) ReadWithSkip(client Modbus, skipFn func(r Register, funcCode int) bool) error {
 	var model string
 
 	query := []struct {
@@ -61,6 +65,9 @@ func (i *Inverter) Read(client Modbus) error {
 
 	for _, q := range query {
 		for i, v := range q.regs {
+			if !skipFn(v, q.code) {
+				continue
+			}
 			// Model check, don't bother reading registers for models that don't support it
 			if model != "" && len(v.Models) > 0 && !v.Models.Contains(model) {
 				continue

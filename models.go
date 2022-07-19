@@ -10,3 +10,7 @@ func (m Models) Contains(v string) bool {
 	}
 	return false
 }
+
+func (m Models) ContainsOrNull(v string) bool {
+	return len(m) == 0 || m.Contains(v)
+}

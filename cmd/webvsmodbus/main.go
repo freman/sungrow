@@ -17,7 +17,7 @@ func main() {
 	wsPort := flag.Int("wsPort", 8082, "Port of the websocket server")
 	slaveID := flag.Int("slaveID", 1, "Slave ID")
 
-	inverter := flag.String("inverter", "sungrow.yml", "Inverter definition file")
+	inverter := flag.String("regs", "sungrow.yml", "Register definition file")
 
 	flag.Parse()
 

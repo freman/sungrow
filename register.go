@@ -108,3 +108,11 @@ func (r *Register) read(rdr io.Reader) (err error) {
 
 	return nil
 }
+
+func (r *Register) GetUnit() string {
+	if r.Unit == nil {
+		return ""
+	}
+
+	return *r.Unit
+}
